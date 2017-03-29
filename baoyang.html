@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="oyakuki,oyakuki@163.com">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <title>武汉roseday花店</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/golbal.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slides.js"></script>
+  <script type="text/javascript" src="js/nav.js"></script>
+        <!--[if IE 6]>
+		<script src="js/pngAlaph.js"></script>
+		<script>
+			DD_belatedPNG.fix('*');
+		</script>
+		<![endif]-->
+		<script> 
+			window.onload=function()
+			{
+				var oDiv=document.getElementById('nav');
+				var aStrong=oDiv.getElementsByTagName('strong');
+				var aA=oDiv.getElementsByTagName('a');
+				var iTarget=oDiv.getElementsByTagName('li')[0].offsetHeight;
+
+				for(var i=0; i<aStrong.length; i++)
+				{
+					aA[i].style.width=aStrong[i].style.width=aStrong[i].getElementsByTagName('span')[0].offsetWidth+'px';
+					aStrong[i].style.position='absolute';
+					aStrong[i].style.top=aStrong[i].style.left=0;
+
+					aStrong[i].onmouseover=function()
+					{
+						startMove(this, -iTarget);
+					};
+					aStrong[i].onmouseout=function()
+					{
+						startMove(this, 0);
+					};
+				}
+			};
+
+			function startMove(obj,target)
+			{
+				clearInterval(obj.iTime);
+				obj.iTime=setInterval(function(){
+					if(obj.offsetTop==target)
+					{
+						clearInterval(obj.iTime);
+					}
+					else
+					{
+						var iSpeed=(target-obj.offsetTop)/4;
+						iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+						obj.style.top=obj.offsetTop+iSpeed+'px';
+					}
+				}, 30);
+			}
+		</script>
+		<script>
+     $(function(){
+       $("#slides").slidesjs({
+         width: 1920,
+         height: 530,
+			start: 1,//控制从第几张图开始播放
+		//控制前后按钮 
+    navigation:{
+	      active: false,//是否开启左右按钮
+	      effect: "fade"//触发按钮时，焦点图切换的特效，可选参数"slide"和"fade"
+	    }
+   });
+     });
+   </script>
+ </head>
+ <body>
+   <!-- 导航开始 -->
+   <div class="nav">
+     <div class="sub-con">
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+      <div class="menu" id="nav">
+       <ul>
+            <li class="current">
+              <a href="index.html">
+                <strong>
+                  <span>HOME</span>
+                  <span class="active">首页</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="pinpai.html">
+                <strong>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;STORY&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <span class="active">品牌故事</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="xianhua.html">
+                <strong>
+                  <span>FLOWERS</span>
+                  <span class="active">&nbsp;&nbsp;鲜花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>ETERNAL</span>
+                  <span class="active">永生花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>WEDDING&nbsp;</span>
+                  <span class="active">婚礼花艺</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>BUSSINESS</span>
+                  <span class="active">商务用花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="brand.html">
+                <strong>
+                  <span>COOPERATION</span>
+                  <span class="active">&nbsp;&nbsp;&nbsp;品牌合作</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                <strong>
+                  <span>CONTACT&nbsp;</span>
+                  <span class="active">联系我们</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="huasong.html">
+                <strong>
+                  <span>INFORMATION</span>
+                  <span class="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花颂</span>
+                </strong>
+              </a>
+            </li>
+          </ul>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<!-- 导航结束 -->
+<!-- banner图开始 -->
+<div class="container">
+ <div id="slides">
+  <img src="images/banner_img1.jpg">
+  <img src="images/banner_img2.jpg">
+  <img src="images/banner_img3.jpg">
+  <div class="slidesjs-navigation">
+   <a href="javascript:;" class="slidesjs-previous " title="">&lt;</a>
+   <a href="javascript:;" class="slidesjs-next" title="">&gt;</a>
+ </div>
+</div>
+</div>
+<!-- banner图开始 --> 
+<!-- 内容开始 -->
+<div class="con1">
+ <div class="sub-con">
+  <img src="images/about_caring.png" alt="" width="882" height="169" style="display:block;margin:0 auto;">
+  <div class="about_notes">
+    <ul class="about_notesul">
+      <li>
+        <div class="store_tit">鲜花</div>
+        <img src="http://www.roseonly.com.cn/index/images/notes01.png" alt="roseonly" />
+        <a href="javascript:void(0);" onclick="$('#show').show();$('#show1').hide();$('#show2').hide();" class="caring_button">查看详情</a>
+      </li>
+      <li>
+        <div class="store_tit">永生花</div>
+        <img src="http://www.roseonly.com.cn/index/images/notes02.png" alt="roseonly" />
+        <a href="javascript:void(0);" onclick="$('#show').hide();$('#show1').show();$('#show2').hide();" class="caring_button">查看详情</a>
+      </li>
+      <li>
+        <div class="store_tit">巧克力</div>
+        <img src="http://www.roseonly.com.cn/index/images/notes06.png" alt="roseonly" />
+        <a href="javascript:void(0);" onclick="$('#show').hide();$('#show1').hide();$('#show2').show();" class="caring_button">查看详情</a>
+      </li>
+    </ul>
+    <div class="notes_zb" id="show">
+      <a href="javascript:void(0);"onclick="$('#show').hide();"class="notesa"></a>
+      <div class="caring_rose">鲜花</div>
+      <img src="http://www.roseonly.com.cn/index/images/caring01.png" class="caring_tb" />
+      <div class="caring_rosestep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring02.png" alt="step" />
+        <div class="caring_rosestep_right">
+          <p><b>STEP 1</b><br/>用剪刀剪断包装盒背面的固定带，即可将鲜花从盒中取出。</p>
+        </div>
+      </div>
+      <div class="caring_rosestep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring03.png" alt="step" />
+        <div class="caring_rosestep_right">
+          <p><b>STEP 2</b><br/>根据您的瓶子高度，以45度角修剪根部。外层的花瓣是为了保护花朵，如不喜欢，可将老花瓣轻轻剥去。</p>
+        </div>
+      </div>
+      <div class="caring_rosestep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring04.png" alt="step" />
+        <div class="caring_rosestep_right">
+          <p><b>STEP 3</b><br/>放在花瓶中的花，请每天剪根换水，保证花枝浸润在水中。</p>
+        </div>
+      </div>
+      <div class="caring_rosestep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring05.png" alt="step" />
+        <div class="caring_rosestep_right">
+          <p><b>STEP 4</b><br/>因运输原因，您拿到的花束如果憔悴，请不要但心。将随赠的“可利鲜”溶解在清水中（每500毫升的清水配一袋“可利鲜”），第二天花束就会焕发精神了。注意：切勿将花放在过热或强光环境下。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="notes_zb" id="show1">
+      <a href="javascript:void(0);"onclick="$('#show1').hide();"class="notesa"></a> 
+      <div id="yongshenghua" class="caring_rose">永生花</div>
+      <img src="http://www.roseonly.com.cn/index/images/caring01.png" class="caring_tb">
+      <div class="caring_yshstep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring06.png" alt="step">
+        <div class="caring_yshstep_right">
+          •请不要浇水或经常用手触碰；<br>
+          •请勿放置室外，勿放置在潮湿的地方（较重的湿气会使<br><div class="caring_Bar"></div>花瓣的颜色发生变化）；<br>
+          •避开日光直射，空调和风扇等通风处；<br>
+          •如果花上堆积了灰尘，可使用柔软的化妆刷轻拂除尘；<br>
+          •梅雨期，若较重的湿气使花瓣呈现出半透明状态或出现<br><div class="caring_Bar"></div>浅灰色斑驳，请不要着急，只须把花放在除湿器旁，或<br><div class="caring_Bar"></div>与1-2袋干燥剂置于同一密闭的容器中数日，便可使它<br><div class="caring_Bar"></div>恢复原来的娇嫩。<br>
+          •按此细心保养，永生玫瑰可陪伴您3年，甚至更长时间
+        </div>
+      </div>
+    </div>  
+    <div class="notes_zb" id="show2">
+      <a href="javascript:void(0);" onclick="$('#show2').hide();" class="notesa"></a> 
+      <div id="qiaokeli" class="caring_rose">巧克力</div>
+      <img src="http://www.roseonly.com.cn/index/images/caring01.png" class="caring_tb"/>
+      <div class="caring_chocolatestep"> 
+        <img src="http://www.roseonly.com.cn/index/images/caring07.png" alt="step"/>
+        <div class="caring_chocolatestep_right">
+          •<a href="http://www.roseonly.com.cn/">roseonly</a> 新鲜手工巧克力的品鉴期以60天为限。为呵<br><div class="caring_Bar"></div>护至美纯粹之味，建议尽早品鉴。<br>
+          •温度对巧克力结晶品质影响很大，请置于冰箱的冷藏室<br><div class="caring_Bar"></div>15-20℃储藏，湿度控制在50%，直接影响到巧克力的<br><div class="caring_Bar"></div>口味及成色。<br>
+          •冷藏过的巧克力取出后不要马上品尝，要等到它与室温<br><div class="caring_Bar"></div>接近时方可品尝。<br>
+          •巧克力拆开包装后，在冰箱的保存时间不要超过一个星<br><div class="caring_Bar"></div>期。冷藏的巧克力，尤其是黑巧克力，会有一层白霜凝<br><div class="caring_Bar"></div>固于表面，但巧克力的本质和味道没有改变，只是其中<br><div class="caring_Bar"></div>的可可脂受热升华到表面，遇冷再结晶于表面。请不要<br><div class="caring_Bar"></div>误以为巧克力变质而丢弃它。<br>
+          •不添加防腐剂的<a href="http://www.roseonly.com.cn/">roseonly</a>纯手工巧克力，越新鲜，味<br><div class="caring_Bar"></div>道越好，口感越纯正。只有用极致匠心、耐心和细心呵<br><div class="caring_Bar"></div>护的爱情，才能持久保鲜、激情不退。<br>
+        </div>
+      </div>
+    </div>  
+    <div class="clear"></div>
+  </div> 
+</div>
+</div>
+<!-- 内容结束 -->
+<!-- footer开始 -->
+<div class="footer">
+ <div class="sub-con">
+  <h2>在线客服</h2>
+  <p>非常感谢您喜欢及定制roseday花店的花礼，roseday花店所有花品请提前3天-7天预订，同城鲜花我们会安排专人配送，偏远地区顾客请咨询客户服务。</p>
+  <div class="fques">
+   <ul>
+    <li>
+      <a href="baoyang.html" class="title">保养物语</a>
+    </li>
+    <li>
+      <a href="zhifu.html" class="title">支付方式</a>
+    </li>
+    <li>
+      <a href="ques.html" class="title">常见问题</a>
+    </li>
+    <li>
+      <a href="yunshu.html" class="title">运输条例</a>
+    </li>
+    <li>
+      <a href="tuihuo.html" class="title">退换条例</a>
+    </li>
+  </ul>
+</div>
+<div class="clear"></div>
+<span>Copyright © 1997-2014 武汉roseday花店 技术支持：<a href="#">双军技术</a></span>
+</div>
+</div>
+<!-- footer结束 -->
+<div class="kfbar">
+ <div class="sub-con">
+  <div class="kfbox">
+   <a href="#"><img src="images/guan_img1.png" alt="" width="270" height="45" style="margin-top: 15px;margin-right: 76px;margin-left: 15px;"></a>
+   <img src="images/guan_img2.png" alt="" width="355" height="40" style="margin-top: 15px;margin-right: 76px;">
+   <a href="tencent://message/?uin=1005819747&amp;Site=咨询&amp;Menu=yes"><img src="images/guan_img3.png" alt="" class="fqq" width="194" height="53"></a>
+ </div>
+</div>
+</div>
+</body>
+</html>

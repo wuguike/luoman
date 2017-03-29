@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="oyakuki,oyakuki@163.com">
+        <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+        <title>武汉roseday花店</title>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/golbal.css">
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slides.js"></script>
+		<script type="text/javascript" src="js/nav.js"></script>
+        <!--[if IE 6]>
+		<script src="js/pngAlaph.js"></script>
+		<script>
+			DD_belatedPNG.fix('*');
+		</script>
+		<![endif]-->
+		<script> 
+			window.onload=function()
+			{
+				var oDiv=document.getElementById('nav');
+				var aStrong=oDiv.getElementsByTagName('strong');
+				var aA=oDiv.getElementsByTagName('a');
+				var iTarget=oDiv.getElementsByTagName('li')[0].offsetHeight;
+
+				for(var i=0; i<aStrong.length; i++)
+				{
+					aA[i].style.width=aStrong[i].style.width=aStrong[i].getElementsByTagName('span')[0].offsetWidth+'px';
+					aStrong[i].style.position='absolute';
+					aStrong[i].style.top=aStrong[i].style.left=0;
+
+					aStrong[i].onmouseover=function()
+					{
+						startMove(this, -iTarget);
+					};
+					aStrong[i].onmouseout=function()
+					{
+						startMove(this, 0);
+					};
+				}
+			};
+
+			function startMove(obj,target)
+			{
+				clearInterval(obj.iTime);
+				obj.iTime=setInterval(function(){
+					if(obj.offsetTop==target)
+					{
+						clearInterval(obj.iTime);
+					}
+					else
+					{
+						var iSpeed=(target-obj.offsetTop)/4;
+						iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+						obj.style.top=obj.offsetTop+iSpeed+'px';
+					}
+				}, 30);
+			}
+		</script>
+		<script>
+	    $(function(){
+	      $("#slides").slidesjs({
+	        width: 1920,
+	        height: 530,
+			start: 1,//控制从第几张图开始播放
+		//控制前后按钮 
+		  navigation:{
+	      active: false,//是否开启左右按钮
+	      effect: "fade"//触发按钮时，焦点图切换的特效，可选参数"slide"和"fade"
+	    }
+	      });
+	    });
+	  </script>
+    </head>
+    <body>
+       <!-- 导航开始 -->
+    <div class="nav">
+    	<div class="sub-con">
+    		<div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+    		<div class="menu" id="nav">
+    			<ul>
+            <li class="current">
+              <a href="index.html">
+                <strong>
+                  <span>HOME</span>
+                  <span class="active">首页</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="pinpai.html">
+                <strong>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;STORY&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  <span class="active">品牌故事</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="xianhua.html">
+                <strong>
+                  <span>FLOWERS</span>
+                  <span class="active">&nbsp;&nbsp;鲜花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>ETERNAL</span>
+                  <span class="active">永生花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>WEDDING&nbsp;</span>
+                  <span class="active">婚礼花艺</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <strong>
+                  <span>BUSSINESS</span>
+                  <span class="active">商务用花</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="brand.html">
+                <strong>
+                  <span>COOPERATION</span>
+                  <span class="active">&nbsp;&nbsp;&nbsp;品牌合作</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="contact.html">
+                <strong>
+                  <span>CONTACT&nbsp;</span>
+                  <span class="active">联系我们</span>
+                </strong>
+              </a>
+            </li>
+            <li>
+              <a href="huasong.html">
+                <strong>
+                  <span>INFORMATION</span>
+                  <span class="active">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;花颂</span>
+                </strong>
+              </a>
+            </li>
+          </ul>
+    		</div>
+    		<div class="clear"></div>
+    	</div>
+    </div>
+    <!-- 导航结束 -->
+    <!-- banner图开始 -->
+    <div class="container">
+    	<div id="slides">
+    		<img src="images/banner_img1.jpg">
+    		<img src="images/banner_img2.jpg">
+    		<img src="images/banner_img3.jpg">
+    		<div class="slidesjs-navigation">
+    			<a href="javascript:;" class="slidesjs-previous " title="">&lt;</a>
+    			<a href="javascript:;" class="slidesjs-next" title="">&gt;</a>
+    		</div>
+    	</div>
+    </div>
+    <!-- banner图开始 --> 
+    <!-- 内容开始 -->
+    <div class="con1">
+    	<div class="sub-con">
+    		<img src="images/about_help.png" alt="" width="882" height="169" style="display:block;margin:0 auto;">
+    		<div class="about_deliveryfont">
+               <div class="about_helptit">
+               Q： 我要转账，转账信息在那？ 
+               </div>
+               <div class="about_helpd">
+               <p>A:您需要先去银行转账，所购商品将在款项到达roseday账户后发出，到款时间一般为1-3个工作日。</p>您可以在任一家银行向以下账户汇款，汇款时请务必在电汇单的用途栏内注明订单号。<br /><br />开户行 &nbsp;&nbsp;&nbsp; 北京智德创辉网络科技有限公司<br />开户银行 &nbsp;&nbsp;&nbsp; 招商银行股份有限公司北京万达广场支行<br />账号 &nbsp;&nbsp;&nbsp; 110908633710906<br /> 
+               </div> 
+               <div class="about_helptit">
+               Q： 是否能给父母、朋友送花？ 
+               </div>
+               <div class="about_helpd">
+               A:阁下，我们现在的花品悉数为爱情而订购，建议您以您父亲/母亲的名义，为母亲/父亲订购。 
+               </div>
+               <div class="about_helptit">
+               Q： 为什么没有在期望的当天抵达？ 
+               </div>
+               <div class="about_helpd">
+               A:阁下，老天常常会与我们开玩笑，或有雾霭，或有雨雪，或有航班延误。物流无法保证100%的准时抵达，或有提前，或有延误，请您包涵，根据经验，在无特殊原因下，95%的用户能够准点达到。 
+               </div>
+               <div class="about_helptit">
+               Q： 可通过何种方式了解roseday花店： </div>
+               <div class="about_helpd">
+               A:阁下，建议您以第一时间添加roseday花店微信：rosedayshop.您详细了解下订单前的注意事项，以及roseday的相关信息。 
+               </div>
+               <div class="about_helptit">
+               Q： 为什么我收到的花跟网上的图片不太一样？ 
+               </div>
+               <div class="about_helpd">
+               A:花开花谢不由人，鲜花是季节性商品，某些花材可能由于天气、运输等突发状况而出现缺货。此时，花艺师将在不影响花艺整体效果的 情况下，用等值或高于原花材价格的新花材进行创作。因此，您收到的花可能跟网站上的图片不太一样。希望您的惊喜程度相当。此外，因为拍摄光线角度等问题，会有些许误差。 
+               </div>
+               <div class="about_helptit">
+               Q： 鲜花一般提前多久预订？如果要的急，可以临时加单吗？ 
+               </div>
+               <div class="about_helpd">A:您需要提前3天下订单并完成支付，由于花材供应的原因，您不能预订比这更早的鲜花。如果急需用花，可在roseday工作时间内（周一至周五9:00-21:00；)致电客服妹子咨询试试运气，但因为订单量需要恒定，我们只能视该时间来酌情考… 
+               </div>
+               <div class="about_helptit">
+               Q： 可以不让收货人知道我的任何信息吗？ 
+               </div>
+               <div class="about_helpd">
+               A:我们发出的货品内外包装上是没有订花人的任何信息的，也就是默认匿名送出尽量为您保密。但阁下，roseday花店提醒您，收花人会因此而出现拒收的情况，使得爱无法及时送达。请您谨慎考量，roseday花店无法为此承担责任。 
+               </div>
+
+
+           </div>
+        </div> 
+    </div>
+    <!-- 内容结束 -->
+	<!-- footer开始 -->
+    <div class="footer">
+    	<div class="sub-con">
+    		<h2>在线客服</h2>
+    		<p>非常感谢您喜欢及定制roseday花店的花礼，roseday花店所有花品请提前3天-7天预订，同城鲜花我们会安排专人配送，偏远地区顾客请咨询客户服务。</p>
+    		<div class="fques">
+    			<ul>
+                    <li>
+                        <a href="baoyang.html" class="title">保养物语</a>
+                    </li>
+                    <li>
+                        <a href="zhifu.html" class="title">支付方式</a>
+                    </li>
+                    <li>
+                        <a href="ques.html" class="title">常见问题</a>
+                    </li>
+                    <li>
+                        <a href="yunshu.html" class="title">运输条例</a>
+                    </li>
+                    <li>
+                        <a href="tuihuo.html" class="title">退换条例</a>
+                    </li>
+                </ul>
+    		</div>
+    		<div class="clear"></div>
+    		<span>Copyright © 1997-2014 武汉roseday花店 技术支持：<a href="#">双军技术</a></span>
+    	</div>
+    </div>
+    <!-- footer结束 -->
+    <div class="kfbar">
+    	<div class="sub-con">
+    		<div class="kfbox">
+    			<a href="#"><img src="images/guan_img1.png" alt="" width="270" height="45" style="margin-top: 15px;margin-right: 76px;margin-left: 15px;"></a>
+    			<img src="images/guan_img2.png" alt="" width="355" height="40" style="margin-top: 15px;margin-right: 76px;">
+    			<a href="tencent://message/?uin=1005819747&amp;Site=咨询&amp;Menu=yes"><img src="images/guan_img3.png" alt="" class="fqq" width="194" height="53"></a>
+    		</div>
+    	</div>
+    </div>
+    </body>
+</html>
